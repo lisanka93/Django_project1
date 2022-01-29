@@ -9,10 +9,13 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import django_heroku
 from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+
+django_heroku.settings(locals())
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 print("BASES DIR", BASE_DIR)
 
@@ -53,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
      'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',  #needed for gflatpages
+     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'project1.urls'
@@ -135,3 +139,7 @@ STATICFILES_DIRS = [
 TEMPLATE_DIRS = [
     os.path.join(BASE_DIR, "templates"),
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+import django_heroku
+django_heroku.settings(locals())
