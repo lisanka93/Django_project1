@@ -14,7 +14,6 @@ from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
-django_heroku.settings(locals())
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 print("BASES DIR", BASE_DIR)
@@ -26,7 +25,7 @@ print("BASES DIR", BASE_DIR)
 SECRET_KEY = 'django-insecure-2!9t5!*ondb%^b7&(s8h1l8*tiygse@z^c=c8)t(ro!p=2k4$i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
