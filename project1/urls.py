@@ -21,7 +21,7 @@ from django.contrib.flatpages import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('pages/', include('django.contrib.flatpages.urls'))
-    path('', views.flatpage, {'url': 'https://secure-citadel-30449.herokuapp.com/'}, name='about'),
+    path('', views.flatpage, {'url': '/about/'}, name='about'),
     path('page2', views.flatpage, {'url': '/page2/'}, name='page2'),
     path('page3', views.flatpage, {'url': '/page3/'}, name='page3')
 ]

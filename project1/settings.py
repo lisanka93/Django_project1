@@ -25,7 +25,7 @@ print("BASES DIR", BASE_DIR)
 SECRET_KEY = 'django-insecure-2!9t5!*ondb%^b7&(s8h1l8*tiygse@z^c=c8)t(ro!p=2k4$i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -55,7 +55,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
      'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',  #needed for gflatpages
-     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'project1.urls'
@@ -138,7 +137,3 @@ STATICFILES_DIRS = [
 TEMPLATE_DIRS = [
     os.path.join(BASE_DIR, "templates"),
 ]
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-import django_heroku
-django_heroku.settings(locals())
